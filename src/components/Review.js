@@ -4,6 +4,13 @@ export default function Review({ fullFormData, prevStep }) {
     console.log(fullFormData);
   };
 
+  function formatList(arr) {
+    if (!arr || arr.length === 0) return "";
+    if (arr.length === 1) return arr[0];
+    if (arr.length === 2) return arr.join(" and ");
+    return arr.slice(0, -1).join(", ") + " and " + arr[arr.length - 1];
+  }
+
   return (
     <div className="form-step">
       <h2>Review Your Info</h2>
@@ -27,6 +34,10 @@ export default function Review({ fullFormData, prevStep }) {
         <div className="review-item">
           <span className="review-label">Date of Birth:</span>
           <span className="review-value">{fullFormData.dob}</span>
+        </div>
+        <div className="review-item">
+          <span className="review-label">Gender:</span>
+          <span className="review-value">{fullFormData.gender}</span>
         </div>
         <div className="review-item">
           <span className="review-label">Email:</span>
@@ -59,7 +70,7 @@ export default function Review({ fullFormData, prevStep }) {
       </div>
 
       <div className="review-section">
-        <h3 className="section-title">Preferences & Contact Options</h3>
+        <h3 className="section-title">Preferences & Contact Methods</h3>
         <p className="review-value">
           {" "}
           {fullFormData.preferences.length === 0
@@ -68,11 +79,21 @@ export default function Review({ fullFormData, prevStep }) {
             ? `You have agreed to receive our ${fullFormData.preferences[0].toLowerCase()}.`
             : `You have agreed to receive our ${fullFormData.preferences[0].toLowerCase()} and ${fullFormData.preferences[1].toLowerCase()}.`}
         </p>
+        <p className="review-value">
+          {fullFormData.contactMethods &&
+          fullFormData.contactMethods.length === 0
+            ? "You have not selected any preferred contact methods."
+            : `Your preferred contact method${
+                fullFormData.contactMethods.length > 1 ? "s are" : " is"
+              } ${formatList(fullFormData.contactMethods)}.`}
+        </p>
       </div>
 
       <div className="navigation-buttons">
         <button onClick={prevStep}>Back</button>
-        <button onClick={handleSubmit}>Submit</button>
+        <button id="submit" onClick={handleSubmit}>
+          Submit
+        </button>
       </div>
     </div>
   );

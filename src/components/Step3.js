@@ -17,21 +17,23 @@ export default function Step3({
 
   const handleContactCheckbox = (event) => {
     const { checked, value } = event.target;
-    let newContactMethod = [...stepThreeFormData.contactMethod];
+    let newContactMethods = [...stepThreeFormData.contactMethods];
     if (checked) {
-      newContactMethod.push(value);
+      newContactMethods.push(value);
     } else {
-      newContactMethod = newContactMethod.filter((method) => method !== value);
+      newContactMethods = newContactMethods.filter(
+        (method) => method !== value
+      );
     }
     setStepThreeFormData({
       ...stepThreeFormData,
-      contactMethod: newContactMethod,
+      contactMethods: newContactMethods,
     });
   };
 
   return (
     <div className="form-step">
-      <h2>Preferences & Contact Options</h2>
+      <h2>Preferences & Contact Methods</h2>
       <div className="preferences-section">
         <h3>Preferences</h3>
         <p className="description">
@@ -68,8 +70,8 @@ export default function Step3({
             <input
               type="checkbox"
               id="email"
-              value="Email"
-              checked={stepThreeFormData.contactMethod.includes("Email")}
+              value="email"
+              checked={stepThreeFormData.contactMethods.includes("email")}
               onChange={handleContactCheckbox}
             />
             Receive updates and offers via email.
@@ -78,8 +80,8 @@ export default function Step3({
             <input
               type="checkbox"
               id="phone"
-              value="Phone"
-              checked={stepThreeFormData.contactMethod.includes("Phone")}
+              value="phone"
+              checked={stepThreeFormData.contactMethods.includes("phone")}
               onChange={handleContactCheckbox}
             />
             Receive important calls or notifications.
@@ -89,7 +91,7 @@ export default function Step3({
               type="checkbox"
               id="sms"
               value="SMS"
-              checked={stepThreeFormData.contactMethod.includes("SMS")}
+              checked={stepThreeFormData.contactMethods.includes("SMS")}
               onChange={handleContactCheckbox}
             />
             Get short text messages with updates and promotions.

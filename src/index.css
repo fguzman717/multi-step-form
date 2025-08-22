@@ -198,6 +198,14 @@ input[type="checkbox"] {
   color: #333;
 }
 
+#submit {
+  background-color: #4caf50;
+}
+
+#submit:hover {
+  background-color: #45a049;
+}
+
 /* Progress Bar */
 
 .progress-container {

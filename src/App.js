@@ -28,7 +28,7 @@ function App() {
 
   const [stepThreeFormData, setStepThreeFormData] = useState({
     preferences: [],
-    contactMethod: [],
+    contactMethods: [],
   });
 
   const [stepFourFormData, setStepFourFormData] = useState({
