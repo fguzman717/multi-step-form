@@ -38,7 +38,6 @@ export default function Step3({
           Select the types of communications you would like to receive from us.
         </p>
         <label htmlFor="newsletters">
-          Get our monthly newsletter with the latest updates and tips!
           <input
             type="checkbox"
             id="newsletters"
@@ -46,9 +45,9 @@ export default function Step3({
             checked={stepThreeFormData.preferences.includes("Newsletters")}
             onChange={handlePreferenceCheckbox}
           />
+          Get our monthly newsletter with the latest updates and tips!
         </label>
         <label htmlFor="promotions">
-          Receive special offers and promotional deals!
           <input
             type="checkbox"
             id="promotions"
@@ -56,6 +55,7 @@ export default function Step3({
             checked={stepThreeFormData.preferences.includes("Promotions")}
             onChange={handlePreferenceCheckbox}
           />
+          Receive special offers and promotional deals!
         </label>
       </div>
       <div className="contact-section">
@@ -65,7 +65,6 @@ export default function Step3({
         </p>
         <div className="contact-method">
           <label htmlFor="email">
-            Receive updates and offers via email.
             <input
               type="checkbox"
               id="email"
@@ -73,9 +72,9 @@ export default function Step3({
               checked={stepThreeFormData.contactMethod.includes("Email")}
               onChange={handleContactCheckbox}
             />
+            Receive updates and offers via email.
           </label>
           <label htmlFor="phone">
-            Receive important calls or notifications.
             <input
               type="checkbox"
               id="phone"
@@ -83,9 +82,9 @@ export default function Step3({
               checked={stepThreeFormData.contactMethod.includes("Phone")}
               onChange={handleContactCheckbox}
             />
+            Receive important calls or notifications.
           </label>
           <label htmlFor="sms">
-            Get short text messages with updates and promotions.
             <input
               type="checkbox"
               id="sms"
@@ -93,6 +92,7 @@ export default function Step3({
               checked={stepThreeFormData.contactMethod.includes("SMS")}
               onChange={handleContactCheckbox}
             />
+            Get short text messages with updates and promotions.
           </label>
         </div>
       </div>
