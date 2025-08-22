@@ -31,7 +31,7 @@ export default function Step3({
 
   return (
     <div className="form-step">
-      <h2>Step 3: Preferences & Contact Options</h2>
+      <h2>Preferences & Contact Options</h2>
       <div className="preferences-section">
         <h3>Preferences</h3>
         <p className="description">

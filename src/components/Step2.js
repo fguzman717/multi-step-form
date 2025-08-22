@@ -66,7 +66,7 @@ export default function Step2({
 
   return (
     <div className="form-step">
-      <h2>Step 2: Address Information</h2>
+      <h2>Address Information</h2>
       <label htmlFor="streetAddress">
         Street Address
         <input
@@ -104,8 +104,10 @@ export default function Step2({
               onChange={handleChange}
             >
               <option value="">----Select State----</option>
-              {states.map((state) => (
-                <option value={state}>{state}</option>
+              {states.map((state, index) => (
+                <option key={index} value={state}>
+                  {state}
+                </option>
               ))}
             </select>
           </label>

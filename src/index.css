@@ -1,0 +1,250 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.form-step {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+.form-step h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+h3 {
+  color: #333;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  color: #444;
+  font-size: 0.9rem;
+}
+
+input,
+select {
+  margin-top: 0.3rem;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+
+input:focus,
+select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+}
+
+button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  gap: 8rem;
+}
+
+/* Step 1 */
+
+.name-container,
+.demographic-container,
+.contact-container {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.name-container {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.demographic-container {
+  align-content: center;
+  grid-template-columns: repeat(2, 30%);
+  justify-content: center;
+  align-content: center;
+}
+
+.contact-container {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Step 2 */
+
+.address-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Step 3 */
+
+.preferences-section label,
+.contact-method label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 14px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.contact-section {
+  padding-top: 1rem;
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #007bff;
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+.description {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.contact-method {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 0.5rem;
+}
+
+/* Step 4 */
+
+.account-form {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.account-form label {
+  margin-bottom: 0.5rem;
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+/* Review Step */
+
+.section-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: #333;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.25rem;
+}
+
+.review-section {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.review-label {
+  font-weight: 600;
+  color: #444;
+}
+
+.review-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.review-value {
+  color: #333;
+}
+
+/* Progress Bar */
+
+.progress-container {
+  margin: 20px 0;
+}
+
+.progress-track {
+  position: relative;
+  height: 8px;
+  border-radius: 4px;
+  background: #e0e0e0;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #4caf50;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+.progress-text {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .name-container {
+    grid-template-columns: 1fr;
+  }
+
+  .demographic-container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .address-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-method {
+    grid-template-columns: 1fr;
+  }
+}

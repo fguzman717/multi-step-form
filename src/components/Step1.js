@@ -12,7 +12,7 @@ export default function Step1({
 
   return (
     <div className="form-step">
-      <h2>Step 1: Personal Information</h2>
+      <h2>Personal Information</h2>
       <div className="name-container">
         <label htmlFor="firstName">
           First Name

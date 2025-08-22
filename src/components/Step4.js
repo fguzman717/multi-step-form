@@ -13,7 +13,7 @@ export default function Step4({
 
   return (
     <div className="form-step">
-      <h2>Step 4: Account Details</h2>
+      <h2>Account Details</h2>
       <div className="account-form">
         <label htmlFor="username">Username</label>
         <input

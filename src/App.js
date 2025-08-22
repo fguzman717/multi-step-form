@@ -4,6 +4,7 @@ import Step2 from "./components/Step2";
 import Step3 from "./components/Step3";
 import Step4 from "./components/Step4";
 import Review from "./components/Review";
+import ProgressWithSteps from "./components/ProgressBar";
 
 function App() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -81,11 +82,14 @@ function App() {
     5: <Review fullFormData={fullFormData} prevStep={prevStep} />,
   };
 
+  const totalSteps = Object.keys(steps).length;
+
   const renderStep = () => steps[currentStep] || null;
 
   return (
     <div className="form-container">
       <h1>Multi-Step Form</h1>
+      <ProgressWithSteps currentStep={currentStep} totalSteps={totalSteps} />
       {renderStep()}
     </div>
   );
